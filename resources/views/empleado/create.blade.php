@@ -1,4 +1,4 @@
-//formulario de creacion de empleado
+<!-- formulario de creacion de empleado -->
 
  <!-- enctype="multipart/form-data" == sirve para adjuntar datos -->
 
@@ -6,6 +6,6 @@
     @csrf
     <!-- @ include( 'empleado.form' ); hace referencia a la carpeta /empleado/form.blade.php // quitar los espacios-->
 
-    @include('empleado.form')
+    @include('empleado.form',['modo'=>'Crear'])
     
 </form>

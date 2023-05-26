@@ -1,6 +1,7 @@
-//formulario que tendran datos en comun con create y edit 
-<br>
+<!-- formulario que tendran datos en comun con create y edit  -->
 
+<h1>  {{$modo}} Empleado  </h1>
+<br>
 <label for="Nombre">Nombre</label>
     
     <input type="text" name="Nombre" value="{{ isset($empleado->nombre)?$empleado->nombre:''}}" id="Nombre">
@@ -26,6 +27,6 @@
     <input type="file" name="Foto" value=""  id="Foto">
     <br>
 
-    <input type="submit" value="Guardar datos">
+    <input type="submit" value=" {{$modo}} datos">
     <a href="{{ url('empleado/') }}">Volver</a>
     <br>
