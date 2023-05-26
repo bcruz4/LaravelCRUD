@@ -33,7 +33,7 @@
             <td>{{ $empleado->id }}</td>
 
             <td>
-                <img src="{{ asset('storage').'/'.$empleado->foto}}" width="100" alt="" >
+                <img class="img-thumbnail img-fluid" src="{{ asset('storage').'/'.$empleado->foto}}" width="100" alt="" >
                 <!-- {{ $empleado->foto }} -->
 
             

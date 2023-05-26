@@ -1,32 +1,38 @@
 <!-- formulario que tendran datos en comun con create y edit  -->
 
 <h1>  {{$modo}} Empleado  </h1>
-<br>
-<label for="Nombre">Nombre</label>
-    
-    <input type="text" name="Nombre" value="{{ isset($empleado->nombre)?$empleado->nombre:''}}" id="Nombre">
-    <br>
 
+<div class="form-group"> 
+    <label for="Nombre">Nombre</label>    
+    <input type="text" class= "form-control" name="Nombre" value="{{ isset($empleado->nombre)?$empleado->nombre:''}}" id="Nombre">
+</div>
+
+<div class="form-group"> 
     <label for="ApellidoPaterno">Apellido Paterno</label>
-    <input type="text" name="ApellidoPaterno" value ="{{isset($empleado->apellidoPaterno)?$empleado->apellidoPaterno:''}}" id="ApellidoPaterno">
-    <br>
-
-    <label for="ApellidoMaterno">Apellido Materno</labe l>
-    <input type="text" name="ApellidoMaterno" value ="{{isset($empleado->apellidoMaterno)?$empleado->apellidoMaterno:''}}" id="ApellidoMaterno">
-    <br>
-
-    <label for="Correo">Correo</label>
-    <input type="text" name="Correo" value ="{{isset($empleado->correo)?$empleado->correo:''}}" id="Correo">
-    <br>
-
-    <label for="Foto">Foto</label>
-    @if (isset($empleado->foto))
-    <img src="{{ asset('storage').'/'.$empleado->foto}}" width="100" alt="">
-    @endif
+    <input type="text" class= "form-control" name="ApellidoPaterno" value ="{{isset($empleado->apellidoPaterno)?$empleado->apellidoPaterno:''}}" id="ApellidoPaterno">
+</div>
     
-    <input type="file" name="Foto" value=""  id="Foto">
-    <br>
+<div class="form-group"> 
+    <label for="ApellidoMaterno">Apellido Materno</label>
+    <input type="text" class= "form-control" name="ApellidoMaterno" value ="{{isset($empleado->apellidoMaterno)?$empleado->apellidoMaterno:''}}" id="ApellidoMaterno">
+</div>
 
-    <input type="submit" value=" {{$modo}} datos">
-    <a href="{{ url('empleado/') }}">Volver</a>
+<div class="form-group"> 
+    <label for="Correo">Correo</label>
+    <input type="text" class= "form-control" name="Correo" value ="{{isset($empleado->correo)?$empleado->correo:''}}" id="Correo">
+</div>
+
+<div class="form-group">
+    <label for="Foto"></label>
+    @if (isset($empleado->foto))
+        <img class="img-thumbnail img-fluid" src="{{ asset('storage/'.$empleado->foto) }}" width="100" alt="">
+    @endif
+    <input type="file" class="form-control" name="Foto" value ="" id="Foto">
     <br>
+</div>
+
+<div class="form-group">
+    <input  class="btn btn-primary" type="submit" value=" {{$modo}} datos">
+    <a class="btn btn-success" href="{{ url('empleado/') }}">Volver</a>
+</div>
+ 
