@@ -15,7 +15,7 @@ use App\Http\Controllers\EmpleadoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 /*
@@ -36,4 +36,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
+
+
+Route::group(['middlware'=>'auth'] ,function () {
+    // cuando el usuario se loguue se vaya a empleadoscontroller a index
+    Route::get('/', [EmpleadoController::class, 'index'])->name('home');
+});

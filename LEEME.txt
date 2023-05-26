@@ -13,6 +13,8 @@ php artisan storage::link
 php artisan route:list   
 ++ sirve para desplegar la lista de rutas y sus funciones destroy, create, etc
 
+
+===COMANDOS PARA INTEGRACION CON bootstrap===
 php artisan ui bootstrap --auth
 ++sirve para integrar botstrap y su autenticacion de golpe
 
