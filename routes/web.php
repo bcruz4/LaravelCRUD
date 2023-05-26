@@ -29,3 +29,11 @@ Route::get('empleado/create',[EmpleadoController::class, 'create']);
 
 //  Accede a todas las URL de los metod en empleadoController
 Route::resource('empleado', EmpleadoController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

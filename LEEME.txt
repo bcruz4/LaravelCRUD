@@ -1,3 +1,23 @@
 https://www.youtube.com/watch?v=9DU7WLZeam8
 
 https://startbootstrap.com/previews/personal
+
+comandos importantes
+
+composer required laravel/ui 
+++ este sirve para integrara la interfaz de la aplicacion al trabajr con bootstrap o vue
+
+php artisan storage::link
+++ este sirve para crear un link a un directorio ejemplo: al crear un enlace a una aimagen en la carpeta store
+
+php artisan route:list   
+++ sirve para desplegar la lista de rutas y sus funciones destroy, create, etc
+
+php artisan ui bootstrap --auth
+++sirve para integrar botstrap y su autenticacion de golpe
+
+npm install
+++completa integracion con node
+
+ npm run dev
+ ++ utilizarlo despues de npm install para completar con la integracion
