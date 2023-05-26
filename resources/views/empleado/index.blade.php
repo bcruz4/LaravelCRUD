@@ -2,13 +2,18 @@
 <!-- extension bootstrap "b-table-header" -->
 <!-- creamos un enlace para poder mandarnos al formulario de creacion -->
 
+<!-- Jalamos el template de ./layouts/app.blade.php -->
+@extends('layouts.app')
+@section('content')
+<div class="container">
+
 @if(Session::has('mensaje'))
 {{ Session::get('mensaje') }}
 @endif
 
 <a href="{{ url('empleado/create') }}">Registrar nuevo empleado</a>
-<table class="table table-dark">
-    <thead class="thead-dark">
+<table class="table table-ligth">
+    <thead class="thead-ligth">
         <tr>
             <th>#</th>
             <th>Foto</th>
@@ -51,3 +56,5 @@
         @endforeach
     </tbody>
 </table>
+</div>
+@endsection

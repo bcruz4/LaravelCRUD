@@ -39,7 +39,7 @@ Auth::routes();
 Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 
 
-Route::group(['middlware'=>'auth'] ,function () {
+Route::group(['middleware'=>'auth'] ,function () {
     // cuando el usuario se loguue se vaya a empleadoscontroller a index
     Route::get('/', [EmpleadoController::class, 'index'])->name('home');
 });
