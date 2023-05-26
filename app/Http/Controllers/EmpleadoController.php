@@ -49,7 +49,8 @@ class EmpleadoController extends Controller
         Empleado::insert($datosEmpleado);
         // retorna los datos emviados
         //return response()->json($datosEmpleado);
-        return redirect('empleado');
+        //enviamos un mensaje que confirma la creacion de usuario
+        return redirect('empleado')->with('mensaje','Empleado agregado con exito');
 
     }
 
@@ -66,7 +67,6 @@ class EmpleadoController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
      * @param  \App\Models\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
@@ -119,6 +119,6 @@ class EmpleadoController extends Controller
        
         // retorna mensaje en un json
         // return response()->json(['mensaje'=>'Empleado eliminado']);
-        return redirect('empleado');
+        return redirect('empleado')->with('mensaje','Empleado Borrado');
     }
 }

@@ -1,8 +1,11 @@
 <!-- //mostrar la lista de empleados :) -->
-
 <!-- extension bootstrap "b-table-header" -->
-
 <!-- creamos un enlace para poder mandarnos al formulario de creacion -->
+
+@if(Session::has('mensaje'))
+{{ Session::get('mensaje') }}
+@endif
+
 <a href="{{ url('empleado/create') }}">Registrar nuevo empleado</a>
 <table class="table table-dark">
     <thead class="thead-dark">
