@@ -28,13 +28,12 @@ Route::get('empleado/create',[EmpleadoController::class, 'create']);
 */
 
 //  Accede a todas las URL de los metod en empleadoController
-Route::resource('empleado', EmpleadoController::class);
+// agregamos ->middleware('auth'); para que el usurio no pueda entrar a esa seccion si no esta logeado
+Route::resource('empleado', EmpleadoController::class)->middleware('auth');
 
-Auth::routes();
+// eliminamos las funciones de nuevo registro y resetear la contrasnia
+Auth::routes(['register'=>false,'reset'=>false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
 
 Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 

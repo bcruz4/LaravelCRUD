@@ -32,7 +32,7 @@
 
             <td>
                 <img src="{{ asset('storage').'/'.$empleado->foto}}" width="100" alt="" >
-                {{ $empleado->foto }}
+                <!-- {{ $empleado->foto }} -->
 
             
             </td>
