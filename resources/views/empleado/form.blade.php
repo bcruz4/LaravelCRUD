@@ -2,6 +2,20 @@
 
 <h1>  {{$modo}} Empleado  </h1>
 
+<!-- Muestra los errores de valores no ingresado en en form -->
+@if(count($errors)>0)
+<div class="alert alert-danger" role="alert">
+    <ul>
+    @foreach( $errors->all() as $error)
+        <li>
+            {{ $error }}
+             @endforeach
+        </li>
+    </ul>
+</div>
+
+@endif
+
 <div class="form-group"> 
     <label for="Nombre">Nombre</label>    
     <input type="text" class= "form-control" name="Nombre" value="{{ isset($empleado->nombre)?$empleado->nombre:''}}" id="Nombre">

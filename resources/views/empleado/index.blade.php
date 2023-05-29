@@ -14,8 +14,8 @@
 <a href="{{ url('empleado/create') }}" class="btn btn-success">Registrar nuevo empleado</a>
 <br>
 <br>
-<table class="table table-ligth">
-    <thead class="thead-ligth">
+<table class="table table-striped table-ligth">
+  <thead>
         <tr>
             <th>#</th>
             <th>Foto</th>

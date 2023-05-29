@@ -39,7 +39,20 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //VALIDACION DE DEATOS NO LLENADOS EN EL FORM
+        $campos=[
+            'nombre'=>'required|string|max:100',
+            'apellidoPaterno'=>'required|string|max:100',
+            'apellidoMaterno'=>'required|string|max:100',
+            'correo'=>'required|email',
+            'foto'=>'required|max:10000|mimes:jpeg,png,jpg',
+        ];
+        $mensaje=[
+            'required'=>'El :attribute es requerido',
+            'foto.required'=>'La foto requerida',
+        ];
+        $this->validate($request, $campos, $mensaje);
+        
         //$datosEmpleado = request()->all();
         //recolecta los datos excepto el token
         $datosEmpleado = request()->except('_token');
