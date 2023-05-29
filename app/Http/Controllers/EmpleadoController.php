@@ -16,7 +16,7 @@ class EmpleadoController extends Controller
     public function index()
     {
         //consultar datos almacenados y enviarlos a index.blade.php
-        $datos['empleados']=Empleado::paginate(10);
+        $datos['empleados']=Empleado::paginate(5);
         return view('empleado.index', $datos);
     }
 
