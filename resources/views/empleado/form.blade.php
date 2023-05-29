@@ -7,33 +7,32 @@
 <div class="alert alert-danger" role="alert">
     <ul>
     @foreach( $errors->all() as $error)
-        <li>
-            {{ $error }}
-             @endforeach
-        </li>
+        <li> {{ $error }}  </li>
+    @endforeach        
     </ul>
 </div>
-
 @endif
 
 <div class="form-group"> 
-    <label for="Nombre">Nombre</label>    
-    <input type="text" class= "form-control" name="Nombre" value="{{ isset($empleado->nombre)?$empleado->nombre:''}}" id="Nombre">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" name="nombre" 
+    value="{{ isset($empleado->nombre) ? $empleado->nombre : old('nombre') }}" id="nombre">
 </div>
 
 <div class="form-group"> 
-    <label for="ApellidoPaterno">Apellido Paterno</label>
-    <input type="text" class= "form-control" name="ApellidoPaterno" value ="{{isset($empleado->apellidoPaterno)?$empleado->apellidoPaterno:''}}" id="ApellidoPaterno">
+    <label for="apellidoPaterno">Apellido Paterno</label>
+    <input type="text" class= "form-control" name="apellidoPaterno" 
+    value ="{{ isset($empleado->apellidoPaterno)?$empleado->apellidoPaterno:old('apellidoPaterno') }}" id="apellidoPaterno">
 </div>
     
 <div class="form-group"> 
-    <label for="ApellidoMaterno">Apellido Materno</label>
-    <input type="text" class= "form-control" name="ApellidoMaterno" value ="{{isset($empleado->apellidoMaterno)?$empleado->apellidoMaterno:''}}" id="ApellidoMaterno">
+    <label for="apellidoMaterno">Apellido Materno</label>
+    <input type="text" class= "form-control" name="apellidoMaterno" value ="{{isset($empleado->apellidoMaterno)?$empleado->apellidoMaterno:old('apellidoMaterno')}}" id="apellidoMaterno">
 </div>
 
 <div class="form-group"> 
-    <label for="Correo">Correo</label>
-    <input type="text" class= "form-control" name="Correo" value ="{{isset($empleado->correo)?$empleado->correo:''}}" id="Correo">
+    <label for="correo">Correo</label>
+    <input type="text" class= "form-control" name="correo" value ="{{isset($empleado->correo)?$empleado->correo:old('correo') }}" id="correo">
 </div>
 
 <div class="form-group">

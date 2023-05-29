@@ -49,7 +49,7 @@ class EmpleadoController extends Controller
         ];
         $mensaje=[
             'required'=>'El :attribute es requerido',
-            'foto.required'=>'La foto requerida',
+            'foto.required'=>'La foto requerida'
         ];
         $this->validate($request, $campos, $mensaje);
         
