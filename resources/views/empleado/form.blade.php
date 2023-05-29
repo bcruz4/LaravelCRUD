@@ -15,6 +15,7 @@
 
 <div class="form-group"> 
     <label for="nombre">Nombre</label>
+    <!-- usamos : old('nombre') para recuperar datos anteriores ingresados en el form por un error de validacion -->
     <input type="text" class="form-control" name="nombre" 
     value="{{ isset($empleado->nombre) ? $empleado->nombre : old('nombre') }}" id="nombre">
 </div>

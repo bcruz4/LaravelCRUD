@@ -101,6 +101,26 @@ class EmpleadoController extends Controller
 
    public function update(Request $request, $id)
     {
+        //VALIDACION DE DEATOS NO LLENADOS EN EL FORM
+        $campos=[
+            'nombre'=>'required|string|max:100',
+            'apellidoPaterno'=>'required|string|max:100',
+            'apellidoMaterno'=>'required|string|max:100',
+            'correo'=>'required|email',
+            
+        ];
+        $mensaje=[
+            'required'=>'El :attribute es requerido',
+            // 'foto.required'=>'La foto requerida'
+        ];
+
+        if ($request->hasFile('Foto')) {
+            $campos=['foto'=>'required|max:10000|mimes:jpeg,png,jpg',];
+            $mensaje = ['foto.required'=>'La foto requerida'];
+        }
+
+        $this->validate($request, $campos, $mensaje);
+        
     $datosEmpleado = request()->except(['_token','_method']);
 
     if ($request->hasFile('Foto')) {
