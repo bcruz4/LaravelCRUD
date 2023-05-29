@@ -129,9 +129,12 @@ class EmpleadoController extends Controller
         $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public');
     }
 
-    Empleado::where('id', '=', $id)->update($datosEmpleado);    
-    $empleado = Empleado::findOrFail($id);
-    return view('empleado.edit', compact('empleado'));
+        Empleado::where('id', '=', $id)->update($datosEmpleado);    
+        $empleado = Empleado::findOrFail($id);
+        //return view('empleado.edit', compact('empleado'));
+
+        return redirect('empleado')->with('mensaje','Empleado Actualizado');
+
     }
 
 
