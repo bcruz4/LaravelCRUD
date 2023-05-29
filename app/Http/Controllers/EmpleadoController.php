@@ -56,8 +56,8 @@ class EmpleadoController extends Controller
         //$datosEmpleado = request()->all();
         //recolecta los datos excepto el token
         $datosEmpleado = request()->except('_token');
-        if ($request->hasFile('Foto')) {
-            $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public');
+        if ($request->hasFile('foto')) {
+            $datosEmpleado['foto']=$request->file('foto')->store('uploads','public');
         }
         Empleado::insert($datosEmpleado);
         // retorna los datos emviados
@@ -114,7 +114,7 @@ class EmpleadoController extends Controller
             // 'foto.required'=>'La foto requerida'
         ];
 
-        if ($request->hasFile('Foto')) {
+        if ($request->hasFile('foto')) {
             $campos=['foto'=>'required|max:10000|mimes:jpeg,png,jpg',];
             $mensaje = ['foto.required'=>'La foto requerida'];
         }
@@ -123,10 +123,10 @@ class EmpleadoController extends Controller
         
     $datosEmpleado = request()->except(['_token','_method']);
 
-    if ($request->hasFile('Foto')) {
+    if ($request->hasFile('foto')) {
         $empleado = Empleado::findOrFail($id);
-        Storage::delete('public/'.$empleado->Foto);
-        $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public');
+        Storage::delete('public/'.$empleado->foto);
+        $datosEmpleado['foto']=$request->file('foto')->store('uploads','public');
     }
 
         Empleado::where('id', '=', $id)->update($datosEmpleado);    
